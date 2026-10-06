@@ -12,8 +12,8 @@ and additionally **GLM 5.2 and 5.3**, **GLM 5.3 Flash** and
 **DeepSeek V4 PRO**, **Qwen3.8 Flash Next** (Metal and CUDA), and CPU text
 inference for **Qwen3.6 and Ornith 1.5 35B-A3B**. The code is self-contained and
 deliberately narrow, not a general GGUF runner. Use the supported GGUF files
-documented by the project. Qwen35MoE checkpoints are separate local files and
-are selected with `-m`; they are not included in the model download targets.
+documented by the project. The `ornith15-iq2xxs` download target provides Ornith;
+Qwen3.6 uses a separately obtained local GGUF selected with `-m`.
 
 We test things in integration: model loading, prompt rendering,
 tool calls, KV state, the HTTP server, and the coding agent are built and tested together.

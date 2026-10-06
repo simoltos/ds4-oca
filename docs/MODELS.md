@@ -4,7 +4,7 @@
 
 DwarfStar is not a general GGUF runner. Use the supported model files documented below;
 other GGUFs may have unsupported tensor layouts, metadata, or quantization
-mixes. Qwen3.6 and Ornith use separately obtained local GGUFs.
+mixes. Qwen3.6 uses a separately obtained local GGUF.
 Run `./download_model.sh --help` for filenames and all available targets.
 
 Main-model downloads update `ds4flash.gguf`. Encoders, draft models, packaged
@@ -125,8 +125,10 @@ checkpoints. It has been tested on x86-64 Linux with GCC. CLI, native agent,
 and HTTP serving are integrated. GPU backends, vision, MTP execution,
 SSD streaming, and distributed execution are not implemented for this family.
 
-The project does not bundle these weights or provide a download target.
-Pass the location of a supported local GGUF with `-m`:
+Run `./download_model.sh ornith15-iq2xxs` to download Ornith IQ2_XXS and select
+it through `ds4flash.gguf`, then start it with `./ds4 --cpu`.
+Qwen3.6 requires a separately obtained GGUF. Pass `-m` to choose a local file
+explicitly:
 
 ```sh
 make cpu -j4
